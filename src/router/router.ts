@@ -5,7 +5,7 @@ import routes from "./routes/index";
 Vue.use(Router);
 
 const router = new Router({
-  mode: "hash",
+  mode: "history",
   base: process.env.BASE_URL,
   routes,
 });
@@ -14,10 +14,12 @@ router.beforeEach((to, from, next) => {
   if (sessionStorage.getItem("zks-user-token")) {
     next();
   } else {
-    if (to.name !== "login") {
+    if (to.name !== "login" && to.name !== "forget" && to.name !== "register") {
+      // sessionStorage.setItem("loginAfterRedirect", to.fullPath);
       router.push("/full/login");
+    } else {
+      next();
     }
-    next();
   }
 });
 

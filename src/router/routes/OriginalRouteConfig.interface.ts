@@ -8,6 +8,7 @@ import { RouteConfig } from "vue-router";
  */
 interface OriginalRouteConfig extends RouteConfig {
   access?: boolean;
+  isMain?: boolean;
 }
 
 export { OriginalRouteConfig };

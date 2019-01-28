@@ -10,6 +10,7 @@ const routes: RouteConfig[] = [
     meta: { desc: "主屏容器" },
     component: MainContainer,
     children: [],
+    redirect: "/workBranch",
   },
   {
     path: "/full",
@@ -20,6 +21,16 @@ const routes: RouteConfig[] = [
         path: "login",
         name: "login",
         component: LoginPage,
+      },
+      {
+        path: "forget",
+        name: "forget",
+        component: () => import("@/views/Forget/index.vue"),
+      },
+      {
+        path: "register",
+        name: "register",
+        component: () => import("@/views/Register/index.vue"),
       },
     ],
   },

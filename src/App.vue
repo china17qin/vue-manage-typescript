@@ -30,6 +30,11 @@ body {
   margin: 0;
   padding: 0;
 }
+
+::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+}
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

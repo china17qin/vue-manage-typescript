@@ -45,7 +45,7 @@ export default class extends Vue {
   @Provide() private loading: boolean = false;
   @Provide() private form: FormType = {
     user: '',
-    password: ''
+    password: '',
   };
   @Provide() private rules = {
     user: [
@@ -53,7 +53,7 @@ export default class extends Vue {
     ],
     password: [
       { required: true, message: '请输入密码', trigger: 'change', },
-    ]
+    ],
   };
   private created(): void {
     this.$nextTick().then(() => {
@@ -74,13 +74,16 @@ export default class extends Vue {
         post('/login', this.form).then(f => {
           this.loading = false;
           if (f.status) {
-            const $_router: any = this.$router;
-            generateRouterFun(Limits, $_router)
-            sessionStorage.setItem('zks-limits', JSON.stringify(Limits))
-            sessionStorage.setItem('zks-user-token', f.result.token)
-            this.$router.replace('/processCenter/message/sign');
+            const router: any = this.$router;
+            generateRouterFun(Limits, router);
+            sessionStorage.setItem('zks-limits', JSON.stringify(Limits));
+            sessionStorage.setItem('zks-user-token', f.result.token);
+            // 取出登录前保存的地址信息，登录成功之后重定向。并移除地址信息；
+            const redirectUrl = sessionStorage.getItem('loginAfterRedirect');
+            redirectUrl ? this.$router.replace(redirectUrl) : this.$router.replace('/processCenter/message/sign');
+            sessionStorage.removeItem('loginAfterRedirect');
           }
-        })
+        });
       } else {
         return false;
       }
