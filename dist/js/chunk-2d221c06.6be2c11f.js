@@ -1,0 +1,1 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d221c06"],{cc4d:function(n,e,c){"use strict";c.r(e);var t=function(){var n=this,e=n.$createElement,c=n._self._c||e;return c("h2",[n._v("暂未开放注册")])},u=[],l=c("2877"),i={},o=Object(l["a"])(i,t,u,!1,null,null,null);o.options.__file="index.vue";e["default"]=o.exports}}]);
