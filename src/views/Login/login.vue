@@ -44,8 +44,8 @@ export default class extends Vue {
   @Provide() private CtxHeight!: number;
   @Provide() private loading: boolean = false;
   @Provide() private form: FormType = {
-    user: '',
-    password: '',
+    user: 'ethan.qin@qq.com',
+    password: '123456789',
   };
   @Provide() private rules = {
     user: [
