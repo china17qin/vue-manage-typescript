@@ -50,6 +50,9 @@ export default class HeaderComponent extends Vue {
 }
 </script>
 <style lang="less" scoped>
+* {
+  user-select: none;
+}
 .el-menu.el-menu--horizontal {
   border-bottom: none !important;
 }
