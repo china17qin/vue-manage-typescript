@@ -20,7 +20,9 @@
 <script lang="ts">
 import { Component, Vue, Prop } from "vue-property-decorator";
 import { LimitItem } from "@/mock/m_router";
-@Component
+@Component({
+  name:'MenuItemNode'
+})
 export default class MenuItemNode extends Vue {
   @Prop() private list!: LimitItem[];
 }
