@@ -2,7 +2,7 @@
 
 
 
-### <a href="https://china17qin.github.io/vue-manage-typescript/dist" target="_blank">预览</a>
+### <a href="https://ethan-qin.github.io/vue-manage-typescript/dist" target="_blank">预览</a>
 
 
 ## Project setup
